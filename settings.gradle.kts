@@ -23,4 +23,5 @@ dependencyResolutionManagement {
 rootProject.name = "Ideafestival_2"
 include(":app")
 include(":presentaiton")
-include(":buildsrc")
+include(":data")
+include(":domain")
