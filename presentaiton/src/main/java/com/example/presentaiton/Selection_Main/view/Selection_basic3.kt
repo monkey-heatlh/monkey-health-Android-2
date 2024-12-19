@@ -95,7 +95,6 @@ fun Selection_basic3(
                 }
             }
         }
-
         Spacer(modifier = Modifier.height(24.dp))
 
         Row(
@@ -175,6 +174,7 @@ fun Selection_basic3(
             Switch(checked = true, onCheckedChange = {})
         }
         Spacer(modifier = Modifier.height(24.dp))
+
         Column (
             modifier = Modifier
                 .border(width = 1.dp, color = Color(0xFFC4C4C4))
@@ -215,6 +215,7 @@ fun Selection_basic3(
                     modifier = Modifier.size(24.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
+
                 Text(
                     text = "로그아웃",
                     style = TextStyle(
@@ -247,6 +248,7 @@ fun Selection_basic3(
                     modifier = Modifier.size(24.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
+
                 Text(
                     text = "Monkey Health 정보",
                     style = TextStyle(
