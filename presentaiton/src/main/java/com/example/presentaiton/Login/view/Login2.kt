@@ -1,4 +1,4 @@
-package com.example.presentation.SignUp.view
+package com.example.presentaiton.Login.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -27,7 +27,7 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
-fun Login1(
+fun Login2(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -68,7 +68,7 @@ fun Login1(
             modifier = Modifier
                 .border(
                     width = 1.dp,
-                    color = Color(0xFFA6A6A6),
+                    color = Color(0xFF902BE9),
                     shape = RoundedCornerShape(size = 8.dp)
                 )
                 .width(345.dp)
@@ -76,12 +76,12 @@ fun Login1(
                 .padding(start = 20.dp, top = 16.dp, end = 20.dp, bottom = 16.dp)
         ) {
             Text(
-                text = "이메일을 입력해주세요",
+                text = "s24023@gsm.hs.kr",
                 style = TextStyle(
                     fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
-                    fontWeight = FontWeight(400),
-                    color = Color(0xFF7D7D7D),
+                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                    fontWeight = FontWeight(500),
+                    color = Color(0xFF111111),
                 )
             )
         }
@@ -105,7 +105,7 @@ fun Login1(
             modifier = Modifier
                 .border(
                     width = 1.dp,
-                    color = Color(0xFFA6A6A6),
+                    color = Color(0xFF902BE9),
                     shape = RoundedCornerShape(size = 8.dp)
                 )
                 .width(345.dp)
@@ -113,12 +113,13 @@ fun Login1(
                 .padding(start = 20.dp, top = 16.dp, end = 20.dp, bottom = 16.dp)
         ){
             Text(
-                text = "비밀번호를 입력해주세요",
+                text = "●●●●●●●",
                 style = TextStyle(
                     fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
+                    lineHeight = 22.sp,
+                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
                     fontWeight = FontWeight(400),
-                    color = Color(0xFF7D7D7D),
+                    color = Color(0xFF111111),
                 )
             )
         }
@@ -129,7 +130,7 @@ fun Login1(
                 .width(345.dp)
                 .height(54.dp),
             shape = RoundedCornerShape(size = 8.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF690ED4))
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF902BE9))
         ) {
             Text(
                 text = "로그인",
@@ -146,6 +147,6 @@ fun Login1(
 
 @Preview
 @Composable
-fun PreviewLogin1() {
-    Login1()
+fun PreviewLogin2() {
+    Login2()
 }

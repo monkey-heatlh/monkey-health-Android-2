@@ -1,4 +1,4 @@
-package com.example.presentation.SignUp.view
+package com.example.presentaiton.Login.view
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
@@ -27,7 +28,7 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
-fun Login2(
+fun Login3(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -68,7 +69,7 @@ fun Login2(
             modifier = Modifier
                 .border(
                     width = 1.dp,
-                    color = Color(0xFF902BE9),
+                    color = Color(0xFFFF3434),
                     shape = RoundedCornerShape(size = 8.dp)
                 )
                 .width(345.dp)
@@ -85,7 +86,23 @@ fun Login2(
                 )
             )
         }
-        Spacer(modifier = Modifier.height(28.dp))
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(17.dp),
+            horizontalAlignment = Alignment.End
+        ) {
+            Text(
+                text = "잘못된 이메일 형식입니다.",
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
+                    fontWeight = FontWeight(400),
+                    color = Color(0xFFFF3434),
+                )
+            )
+        }
+        Spacer(modifier = Modifier.height(7.dp))
         Column(
             modifier = Modifier
                 .width(345.dp)
@@ -105,7 +122,7 @@ fun Login2(
             modifier = Modifier
                 .border(
                     width = 1.dp,
-                    color = Color(0xFF902BE9),
+                    color = Color(0xFFFF3434),
                     shape = RoundedCornerShape(size = 8.dp)
                 )
                 .width(345.dp)
@@ -123,14 +140,30 @@ fun Login2(
                 )
             )
         }
-        Spacer(modifier = Modifier.height(70.dp))
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(17.dp),
+            horizontalAlignment = Alignment.End
+        ) {
+            Text(
+                text = "잘못된 이메일 형식입니다.",
+                style = TextStyle(
+                    fontSize = 14.sp,
+                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
+                    fontWeight = FontWeight(400),
+                    color = Color(0xFFFF3434),
+                )
+            )
+        }
+        Spacer(modifier = Modifier.height(46.dp))
         Button(
             onClick = { /*확인 클릭 이벤트*/ },
             modifier = Modifier
                 .width(345.dp)
                 .height(54.dp),
             shape = RoundedCornerShape(size = 8.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF902BE9))
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF690ED4))
         ) {
             Text(
                 text = "로그인",
@@ -147,6 +180,6 @@ fun Login2(
 
 @Preview
 @Composable
-fun PreviewLogin2() {
-    Login2()
+fun PreviewLogin3() {
+    Login3()
 }
