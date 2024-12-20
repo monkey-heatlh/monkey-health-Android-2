@@ -1,4 +1,4 @@
-package com.example.presentaiton.Main
+package com.example.presentaiton.view.Main
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image

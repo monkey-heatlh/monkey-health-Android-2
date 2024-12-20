@@ -1,4 +1,4 @@
-package com.example.presentaiton.SignUp
+package com.example.presentaiton.view.SignUp
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
-fun SignUp4(
+fun SignUp1(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -40,7 +40,7 @@ fun SignUp4(
             )
         )
 
-        Spacer(modifier = Modifier.height(21.dp))
+        Spacer(modifier = modifier.height(21.dp))
 
         Text(
             text = "이메일을 입력하여 함께 운동을 해보아요!!",
@@ -60,19 +60,19 @@ fun SignUp4(
                 onValueChange = {},
                 placeholder = {
                     Text(
-                        text = "s24023@gsm.hs.kr",
+                        text = "이메일을 입력해주세요",
                         style = TextStyle(
                             fontSize = 16.sp,
-                            fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
-                            fontWeight = FontWeight(500),
-                            color = Color(0xFF111111),
+                            fontFamily = FontFamily(Font(R.font.pretendard_regular)),
+                            fontWeight = FontWeight(400),
+                            color = Color(0xFF7D7D7D),
                         )
                     )
                 },
                 modifier = Modifier
-                    .width(345.dp)
-                    .height(51.dp)
-                    .border(1.dp, Color(0xFF902BE9), RoundedCornerShape(8.dp))
+                    .fillMaxWidth()
+                    .height(50.dp)
+                    .border(1.dp, Color(0xFFB0B0B0), RoundedCornerShape(8.dp))
                     .background(Color.White),
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = Color.White,
@@ -87,9 +87,9 @@ fun SignUp4(
             Button(
                 onClick = { /* 인증번호 받기 클릭 이벤트 */ },
                 modifier = Modifier
-                    .width(345.dp)
-                    .height(51.dp)
-                    .border(1.dp, Color(0xFF902BE9), RoundedCornerShape(8.dp)),
+                    .fillMaxWidth()
+                    .height(50.dp)
+                    .border(1.dp, Color(0xFFB0B0B0), RoundedCornerShape(8.dp)),
                 shape = RoundedCornerShape(8.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Transparent,
@@ -102,71 +102,10 @@ fun SignUp4(
                         fontSize = 16.sp,
                         fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
                         fontWeight = FontWeight(600),
-                        color = Color(0xFF902BE9),
+                        color = Color(0xFFC5C5C5),
                     )
                 )
             }
-            Spacer(modifier = Modifier.height(24.dp))
-            Column(modifier = Modifier.fillMaxWidth()){
-                TextField(
-                    value = "",
-                    onValueChange = {},
-                    placeholder = {
-                        Text(
-                            text = "1234",
-                            style = TextStyle(
-                                fontSize = 16.sp,
-                                fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
-                                fontWeight = FontWeight(400),
-                                color = Color(0xFF111111),
-
-                                )
-                        )
-                    },
-                    modifier = Modifier
-                        .width(345.dp)
-                        .height(51.dp)
-                        .border(1.dp, Color(0xFF902BE9), RoundedCornerShape(8.dp))
-                        .background(Color.White),
-                    colors = TextFieldDefaults.colors(
-                        focusedContainerColor = Color.White,
-                        unfocusedContainerColor = Color.White,
-                        focusedIndicatorColor = Color.Transparent,
-                        unfocusedIndicatorColor = Color.Transparent
-                    )
-                )
-            }
-            Text(
-                text = "타인에게 공유하면 위험해요!!",
-                style = TextStyle(
-                    fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
-                    fontWeight = FontWeight(400),
-                    color = Color(0xFFA6A6A6),
-                )
-            )
-        }
-        Spacer(modifier = Modifier.height(24.dp))
-        Button(
-            onClick = { /* 동의하고 시작하기 클릭 이벤트 */ },
-            modifier = Modifier
-                .width(345.dp)
-                .height(54.dp),
-            shape = RoundedCornerShape(size = 8.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF902BE9),
-                contentColor = Color.White
-            )
-        ) {
-            Text(
-                text = "동의하고 시작하기",
-                style = TextStyle(
-                    fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
-                    fontWeight = FontWeight(600),
-                    color = Color(0xFFFFFFFF),
-                )
-            )
         }
     }
 }
@@ -174,6 +113,6 @@ fun SignUp4(
 
 @Preview
 @Composable
-fun PreviewSignUp4() {
-    SignUp4()
+fun PreviewSignUp1() {
+    SignUp1()
 }

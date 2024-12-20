@@ -1,4 +1,4 @@
-package com.example.presentaiton.SignUp
+package com.example.presentaiton.view.SignUp
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
-fun SignUp1(
+fun SignUp2(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -40,7 +40,7 @@ fun SignUp1(
             )
         )
 
-        Spacer(modifier = modifier.height(21.dp))
+        Spacer(modifier = Modifier.height(21.dp))
 
         Text(
             text = "이메일을 입력하여 함께 운동을 해보아요!!",
@@ -60,19 +60,19 @@ fun SignUp1(
                 onValueChange = {},
                 placeholder = {
                     Text(
-                        text = "이메일을 입력해주세요",
+                        text = "s24023@gsm.hs.kr",
                         style = TextStyle(
                             fontSize = 16.sp,
-                            fontFamily = FontFamily(Font(R.font.pretendard_regular)),
-                            fontWeight = FontWeight(400),
-                            color = Color(0xFF7D7D7D),
+                            fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                            fontWeight = FontWeight(500),
+                            color = Color(0xFF111111),
                         )
                     )
                 },
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)
-                    .border(1.dp, Color(0xFFB0B0B0), RoundedCornerShape(8.dp))
+                    .border(1.dp, Color(0xFF902BE9), RoundedCornerShape(8.dp))
                     .background(Color.White),
                 colors = TextFieldDefaults.colors(
                     focusedContainerColor = Color.White,
@@ -89,20 +89,21 @@ fun SignUp1(
                 modifier = Modifier
                     .fillMaxWidth()
                     .height(50.dp)
-                    .border(1.dp, Color(0xFFB0B0B0), RoundedCornerShape(8.dp)),
+                    .border(1.dp, Color(0xFF902BE9), RoundedCornerShape(8.dp)),
                 shape = RoundedCornerShape(8.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Transparent,
                     contentColor = Color(0xFF999999)
                 )
-            ) {
+            )
+            {
                 Text(
                     text = "인증번호 받기",
                     style = TextStyle(
                         fontSize = 16.sp,
                         fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
                         fontWeight = FontWeight(600),
-                        color = Color(0xFFC5C5C5),
+                        color = Color(0xFF902BE9),
                     )
                 )
             }
@@ -113,6 +114,6 @@ fun SignUp1(
 
 @Preview
 @Composable
-fun PreviewSignUp1() {
-    SignUp1()
+fun PreviewSignUp2() {
+    SignUp2()
 }

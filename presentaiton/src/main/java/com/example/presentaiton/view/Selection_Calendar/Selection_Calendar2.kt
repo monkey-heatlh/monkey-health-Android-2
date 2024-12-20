@@ -1,4 +1,4 @@
-package com.example.presentaiton.Selection_Calendar
+package com.example.presentaiton.view.Selection_Calendar
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -27,7 +27,7 @@ import androidx.compose.ui.text.font.FontWeight
 import com.example.presentaiton.R
 
 @Composable
-fun Selection_Calendar1(
+fun Selection_Calendar_memo(
     modifier: Modifier = Modifier
 ) {
     val days = (1..31).toList()
@@ -126,7 +126,60 @@ fun Selection_Calendar1(
             }
         }
 
-        Spacer(modifier = Modifier.height(24.dp))
+        Spacer(modifier = Modifier.height(49.dp))
+
+
+        Column (
+            modifier = Modifier
+                .border(width = 1.dp, color = Color(0xFFD8D8D8))
+                .width(345.dp)
+                .height(67.dp)
+                .padding(start = 10.dp, top = 24.dp, end = 10.dp, bottom = 24.dp)
+        ){
+            Text(
+                text = "오늘은 상체하는날인데 어쩌구",
+                style = TextStyle(
+                    fontSize = 16.sp,
+                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
+                    fontWeight = FontWeight(400),
+                    color = Color(0xFF000000),
+                )
+            )
+        }
+        Column (
+            modifier = Modifier
+                .border(width = 1.dp, color = Color(0xFFD8D8D8))
+                .width(345.dp)
+                .height(67.dp)
+                .padding(start = 10.dp, top = 24.dp, end = 10.dp, bottom = 24.dp)
+        ){
+            Text(
+                text = "팔굽혀펴기 저쩌구",
+                style = TextStyle(
+                    fontSize = 16.sp,
+                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
+                    fontWeight = FontWeight(400),
+                    color = Color(0xFF000000),
+                )
+            )
+        }
+        Column (
+            modifier = Modifier
+                .border(width = 1.dp, color = Color(0xFFD8D8D8))
+                .width(345.dp)
+                .height(67.dp)
+                .padding(start = 10.dp, top = 24.dp, end = 10.dp, bottom = 24.dp)
+        ){
+            Text(
+                text = "수수수수퍼노바",
+                style = TextStyle(
+                    fontSize = 16.sp,
+                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
+                    fontWeight = FontWeight(400),
+                    color = Color(0xFF000000),
+                )
+            )
+        }
 
         OutlinedButton(
             onClick = { /* 여기에 클릭 이벤트 추가 */ },
@@ -134,7 +187,7 @@ fun Selection_Calendar1(
                 .fillMaxWidth()
                 .height(48.dp),
             shape = MaterialTheme.shapes.medium,
-            border = BorderStroke(1.dp, Color(0xFF9C27B0)),
+            border = BorderStroke(1.dp, Color(0xFF902BE9)),
             colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFF9C27B0))
         ) {
             Image(
@@ -151,6 +204,6 @@ fun Selection_Calendar1(
 }
 @Preview
 @Composable
-fun PreviewSelection_Calendar1() {
-    Selection_Calendar1()
+fun PreviewSelection_Calendar_memo() {
+    Selection_Calendar_memo()
 }

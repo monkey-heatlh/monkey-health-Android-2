@@ -1,4 +1,4 @@
-package com.example.presentaiton.SignUp
+package com.example.presentaiton.view.SignUp
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
-fun SignUp3(
+fun SignUp4(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -113,19 +113,20 @@ fun SignUp3(
                     onValueChange = {},
                     placeholder = {
                         Text(
-                            text = "인증번호 입력",
+                            text = "1234",
                             style = TextStyle(
                                 fontSize = 16.sp,
                                 fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
                                 fontWeight = FontWeight(400),
-                                color = Color(0xFF7D7D7D),
-                            )
+                                color = Color(0xFF111111),
+
+                                )
                         )
                     },
                     modifier = Modifier
                         .width(345.dp)
                         .height(51.dp)
-                        .border(1.dp, Color(0xFFA6A6A6), RoundedCornerShape(8.dp))
+                        .border(1.dp, Color(0xFF902BE9), RoundedCornerShape(8.dp))
                         .background(Color.White),
                     colors = TextFieldDefaults.colors(
                         focusedContainerColor = Color.White,
@@ -153,7 +154,7 @@ fun SignUp3(
                 .height(54.dp),
             shape = RoundedCornerShape(size = 8.dp),
             colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF690ED4),
+                containerColor = Color(0xFF902BE9),
                 contentColor = Color.White
             )
         ) {
@@ -163,7 +164,7 @@ fun SignUp3(
                     fontSize = 16.sp,
                     fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
                     fontWeight = FontWeight(600),
-                    color = Color(0xFFC5C5C5),
+                    color = Color(0xFFFFFFFF),
                 )
             )
         }
@@ -173,6 +174,6 @@ fun SignUp3(
 
 @Preview
 @Composable
-fun PreviewSignUp3() {
-    SignUp3()
+fun PreviewSignUp4() {
+    SignUp4()
 }
