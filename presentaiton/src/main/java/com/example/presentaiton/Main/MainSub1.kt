@@ -33,7 +33,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.presentaiton.R
 
 @Composable
-fun MainSub2(
+fun MainSub1(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -237,6 +237,6 @@ fun MainSub2(
 }
 @Preview
 @Composable
-fun PreviewMainSub2() {
-    MainSub2()
+fun PreviewMainSub1() {
+    MainSub1()
 }
