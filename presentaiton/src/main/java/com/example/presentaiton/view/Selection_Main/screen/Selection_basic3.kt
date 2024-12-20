@@ -1,4 +1,4 @@
-package com.example.presentation.Selection_Main.view
+package com.example.presentaiton.view.Selection_Main.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,11 +24,11 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
-fun Selection_basic(
+fun Selection_basic3(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier =modifier
+        modifier = modifier
             .fillMaxSize()
             .background(Color.White)
             .padding(horizontal = 24.dp, vertical = 66.dp),
@@ -95,7 +95,6 @@ fun Selection_basic(
                 }
             }
         }
-
         Spacer(modifier = Modifier.height(24.dp))
 
         Row(
@@ -175,6 +174,7 @@ fun Selection_basic(
             Switch(checked = true, onCheckedChange = {})
         }
         Spacer(modifier = Modifier.height(24.dp))
+
         Column (
             modifier = Modifier
                 .border(width = 1.dp, color = Color(0xFFC4C4C4))
@@ -215,6 +215,7 @@ fun Selection_basic(
                     modifier = Modifier.size(24.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
+
                 Text(
                     text = "로그아웃",
                     style = TextStyle(
@@ -247,6 +248,7 @@ fun Selection_basic(
                     modifier = Modifier.size(24.dp)
                 )
                 Spacer(modifier = Modifier.width(8.dp))
+
                 Text(
                     text = "Monkey Health 정보",
                     style = TextStyle(
@@ -264,6 +266,6 @@ fun Selection_basic(
 
 @Preview
 @Composable
-fun PreviewSelection_basic() {
-    Selection_basic()
+fun PreviewSelection_basic3() {
+    Selection_basic3()
 }

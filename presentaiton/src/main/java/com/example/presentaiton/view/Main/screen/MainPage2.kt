@@ -1,8 +1,7 @@
-package com.example.presentaiton.view.Main
+package com.example.presentaiton.view.Main.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -14,6 +13,8 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import com.example.presentaiton.R
+
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -31,13 +32,10 @@ import androidx.compose.ui.unit.sp
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.SpanStyle
-import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.withStyle
-import com.example.presentaiton.R
+import androidx.compose.material3.Divider
 
 @Composable
-fun MainPage1(
+fun MainPage2(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -78,7 +76,7 @@ fun MainPage1(
                 color = Color(0xFF111111)
             ),
             textAlign = TextAlign.Start,
-            modifier = Modifier.fillMaxWidth()
+            modifier = Modifier.fillMaxWidth().align(Alignment.Start)
         )
 
         Spacer(modifier = Modifier.height(26.dp))
@@ -91,28 +89,20 @@ fun MainPage1(
         ) {
             Column(horizontalAlignment = Alignment.Start) {
                 Text(
-                    text = buildAnnotatedString {
-                        append("안녕하세요, ")
-                        withStyle(style = SpanStyle(fontWeight = FontWeight.Bold, color = Color(0xFF000000))) {
-                            append("모태환")
-                        }
-                        append(" 님")
-                    },
-                    fontSize = 16.sp
+                    text = "안녕하세요, 모태환 님 ",
+                    style = TextStyle(
+                        fontSize = 20.sp,
+                        fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                        fontWeight = FontWeight(500),
+                        color = Color(0xFF000000),
+                    )
                 )
                 Spacer(modifier = Modifier.height(20.dp))
-                Column (
-                    modifier = Modifier
-                        .border(width = 0.5.dp, color = Color(0xFFC4C4C4))
-                        .padding(0.5.dp)
-                        .width(321.dp)
-                        .height(0.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.vector2),
-                        contentDescription = "image description",
-                    )
-                }
+                Divider(
+                    modifier = Modifier.fillMaxWidth(),
+                    thickness = 0.5.dp,
+                    color = Color(0xFFC4C4C4)
+                )
                 Spacer(modifier = Modifier.height(20.dp))
                 Column(
                     horizontalAlignment = Alignment.Start,
@@ -142,22 +132,44 @@ fun MainPage1(
 
         Spacer(modifier = Modifier.height(24.dp))
 
-        Button(
-            onClick = { /* TODO: 루틴 설정하기 클릭 */ },
+        Box(
             modifier = Modifier
-                .fillMaxWidth()
-                .height(48.dp)
-                .border(1.dp, Color(0xFF9C27B0), RoundedCornerShape(8.dp)),
-            colors = ButtonDefaults.buttonColors(containerColor = Color.White)
+                .width(345.dp)
+                .height(51.dp)
+                .background(color = Color(0xFFF7F7F7), shape = RoundedCornerShape(size = 12.dp)),
+            contentAlignment = Alignment.CenterStart
         ) {
-            Text(
-                text = "루틴 설정하기",
-                color = Color(0xFF9C27B0),
-                fontWeight = FontWeight.Medium
-            )
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(start = 16.dp) // 좌측 여백 설정
+            ) {
+                Text(
+                    text = "월요일",
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                        fontWeight = FontWeight.W600,
+                        color = Color(0xFF000000),
+                        textAlign = TextAlign.Start
+                    )
+                )
+
+                Spacer(modifier = Modifier.width(12.dp))
+
+                Text(
+                    text = "|  어깨 운동",
+                    style = TextStyle(
+                        fontSize = 16.sp,
+                        fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                        fontWeight = FontWeight(600),
+                        color = Color(0xFF7B7B7B),
+                    )
+                )
+            }
         }
 
         Spacer(modifier = Modifier.height(24.dp))
+
 
         Button(
             onClick = { /* TODO: 맨몸운동 하러가기 클릭 */ },
@@ -177,6 +189,6 @@ fun MainPage1(
 
 @Preview
 @Composable
-fun PreviewMainPage1() {
-    MainPage1()
+fun PreviewMainPage2() {
+    MainPage2()
 }

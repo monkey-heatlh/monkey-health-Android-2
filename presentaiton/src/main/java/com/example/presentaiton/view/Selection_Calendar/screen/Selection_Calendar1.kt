@@ -1,4 +1,4 @@
-package com.example.presentaiton.view.Selection_Calendar
+package com.example.presentaiton.view.Selection_Calendar.screen
 
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.Font
@@ -25,9 +26,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import com.example.presentaiton.R
 
-
 @Composable
-fun Selection_Calendar(
+fun Selection_Calendar1(
     modifier: Modifier = Modifier
 ) {
     val days = (1..31).toList()
@@ -137,16 +137,20 @@ fun Selection_Calendar(
             border = BorderStroke(1.dp, Color(0xFF9C27B0)),
             colors = ButtonDefaults.outlinedButtonColors(contentColor = Color(0xFF9C27B0))
         ) {
-            Text(
-                text = "+",
-                color = Color(0xFF9C27B0),
-                fontSize = 20.sp
+            Image(
+                painter = painterResource(id = R.drawable.add),
+                contentDescription = "image description",
+                contentScale = ContentScale.Fit,
+                modifier = Modifier
+                    .padding(1.dp)
+                    .width(32.dp)
+                    .height(32.dp)
             )
         }
     }
 }
 @Preview
 @Composable
-fun PreviewSelection_Calendar() {
-    Selection_Calendar()
+fun PreviewSelection_Calendar1() {
+    Selection_Calendar1()
 }

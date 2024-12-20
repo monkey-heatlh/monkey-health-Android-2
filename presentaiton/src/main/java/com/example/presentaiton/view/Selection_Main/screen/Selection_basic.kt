@@ -1,4 +1,4 @@
-package com.example.presentation.Selection_Main.view
+package com.example.presentaiton.view.Selection_Main.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -24,11 +24,11 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
-fun Selcection_basic2(
+fun Selection_basic(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier
+        modifier =modifier
             .fillMaxSize()
             .background(Color.White)
             .padding(horizontal = 24.dp, vertical = 66.dp),
@@ -172,7 +172,7 @@ fun Selcection_basic2(
                     color = Color.Gray
                 )
             }
-            Switch(checked = false, onCheckedChange = {})
+            Switch(checked = true, onCheckedChange = {})
         }
         Spacer(modifier = Modifier.height(24.dp))
         Column (
@@ -264,6 +264,6 @@ fun Selcection_basic2(
 
 @Preview
 @Composable
-fun PreviewSelection_basic2() {
-    Selcection_basic2()
+fun PreviewSelection_basic() {
+    Selection_basic()
 }

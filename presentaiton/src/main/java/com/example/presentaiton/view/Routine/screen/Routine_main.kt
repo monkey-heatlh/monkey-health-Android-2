@@ -1,4 +1,4 @@
-package com.example.presentaiton.view.Routine
+package com.example.presentaiton.view.Routine.screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background

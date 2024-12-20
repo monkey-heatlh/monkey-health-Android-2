@@ -1,4 +1,4 @@
-package com.example.presentaiton.view.SignUp
+package com.example.presentaiton.view.SignUp.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -19,7 +19,7 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
-fun SignUp3(
+fun SignUp2(
     modifier: Modifier = Modifier
 ) {
     Column(
@@ -70,8 +70,8 @@ fun SignUp3(
                     )
                 },
                 modifier = Modifier
-                    .width(345.dp)
-                    .height(51.dp)
+                    .fillMaxWidth()
+                    .height(50.dp)
                     .border(1.dp, Color(0xFF902BE9), RoundedCornerShape(8.dp))
                     .background(Color.White),
                 colors = TextFieldDefaults.colors(
@@ -87,15 +87,16 @@ fun SignUp3(
             Button(
                 onClick = { /* 인증번호 받기 클릭 이벤트 */ },
                 modifier = Modifier
-                    .width(345.dp)
-                    .height(51.dp)
+                    .fillMaxWidth()
+                    .height(50.dp)
                     .border(1.dp, Color(0xFF902BE9), RoundedCornerShape(8.dp)),
                 shape = RoundedCornerShape(8.dp),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.Transparent,
                     contentColor = Color(0xFF999999)
                 )
-            ) {
+            )
+            {
                 Text(
                     text = "인증번호 받기",
                     style = TextStyle(
@@ -106,66 +107,6 @@ fun SignUp3(
                     )
                 )
             }
-            Spacer(modifier = Modifier.height(24.dp))
-            Column(modifier = Modifier.fillMaxWidth()){
-                TextField(
-                    value = "",
-                    onValueChange = {},
-                    placeholder = {
-                        Text(
-                            text = "인증번호 입력",
-                            style = TextStyle(
-                                fontSize = 16.sp,
-                                fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
-                                fontWeight = FontWeight(400),
-                                color = Color(0xFF7D7D7D),
-                            )
-                        )
-                    },
-                    modifier = Modifier
-                        .width(345.dp)
-                        .height(51.dp)
-                        .border(1.dp, Color(0xFFA6A6A6), RoundedCornerShape(8.dp))
-                        .background(Color.White),
-                    colors = TextFieldDefaults.colors(
-                        focusedContainerColor = Color.White,
-                        unfocusedContainerColor = Color.White,
-                        focusedIndicatorColor = Color.Transparent,
-                        unfocusedIndicatorColor = Color.Transparent
-                    )
-                )
-            }
-            Text(
-                text = "타인에게 공유하면 위험해요!!",
-                style = TextStyle(
-                    fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
-                    fontWeight = FontWeight(400),
-                    color = Color(0xFFA6A6A6),
-                )
-            )
-        }
-        Spacer(modifier = Modifier.height(24.dp))
-        Button(
-            onClick = { /* 동의하고 시작하기 클릭 이벤트 */ },
-            modifier = Modifier
-                .width(345.dp)
-                .height(54.dp),
-            shape = RoundedCornerShape(size = 8.dp),
-            colors = ButtonDefaults.buttonColors(
-                containerColor = Color(0xFF690ED4),
-                contentColor = Color.White
-            )
-        ) {
-            Text(
-                text = "동의하고 시작하기",
-                style = TextStyle(
-                    fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
-                    fontWeight = FontWeight(600),
-                    color = Color(0xFFC5C5C5),
-                )
-            )
         }
     }
 }
@@ -173,6 +114,6 @@ fun SignUp3(
 
 @Preview
 @Composable
-fun PreviewSignUp3() {
-    SignUp3()
+fun PreviewSignUp2() {
+    SignUp2()
 }

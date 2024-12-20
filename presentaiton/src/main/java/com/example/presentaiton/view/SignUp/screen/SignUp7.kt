@@ -1,4 +1,4 @@
-package com.example.presentaiton.view.SignUp
+package com.example.presentaiton.view.SignUp.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border

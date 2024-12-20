@@ -1,4 +1,4 @@
-package com.example.presentaiton.view.SignUp
+package com.example.presentaiton.view.Login.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -27,43 +27,26 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
-fun SignUp5(
+fun Login2(
     modifier: Modifier = Modifier
 ) {
     Column(
         modifier = modifier
             .fillMaxSize()
             .background(Color.White)
-            .padding(horizontal = 24.dp, vertical = 76.dp),
+            .padding(horizontal = 24.dp, vertical = 82.dp),
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.Top
     ){
         Text(
-            text = "비밀번호를 설정해주세요.",
+            text = "로그인",
             style = TextStyle(
-                fontSize = 24.sp,
+                fontSize = 32.sp,
                 fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
                 fontWeight = FontWeight(600),
                 color = Color(0xFF000000),
             )
         )
-        Spacer(modifier = Modifier.height(22.dp))
-
-        Column (
-            modifier = Modifier
-                .width(297.dp)
-                .height(19.dp))
-        {
-            Text(
-                text = "비밀번호를 설정하여 나만의 계정을 보호하세요!",
-                style = TextStyle(
-                    fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
-                    fontWeight = FontWeight(400),
-                    color = Color(0xFF000000),
-                )
-            )
-        }
         Spacer(modifier = Modifier.height(51.dp))
 
         Column(
@@ -72,10 +55,10 @@ fun SignUp5(
                 .height(17.dp)
         ) {
             Text(
-                text = "비밀번호",
+                text = "이메일",
                 style = TextStyle(
                     fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
                     fontWeight = FontWeight(400),
                     color = Color(0xFF111111),
                 )
@@ -85,7 +68,7 @@ fun SignUp5(
             modifier = Modifier
                 .border(
                     width = 1.dp,
-                    color = Color(0xFFA6A6A6),
+                    color = Color(0xFF902BE9),
                     shape = RoundedCornerShape(size = 8.dp)
                 )
                 .width(345.dp)
@@ -93,26 +76,26 @@ fun SignUp5(
                 .padding(start = 20.dp, top = 16.dp, end = 20.dp, bottom = 16.dp)
         ) {
             Text(
-                text = "비밀번호를 입력해주세요",
+                text = "s24023@gsm.hs.kr",
                 style = TextStyle(
                     fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
-                    fontWeight = FontWeight(400),
-                    color = Color(0xFF7D7D7D),
+                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                    fontWeight = FontWeight(500),
+                    color = Color(0xFF111111),
                 )
             )
         }
-        Spacer(modifier = Modifier.height(32.dp))
+        Spacer(modifier = Modifier.height(28.dp))
         Column(
             modifier = Modifier
                 .width(345.dp)
                 .height(17.dp)
         ){
             Text(
-                text = "비밀번호 확인",
+                text = "비밀번호",
                 style = TextStyle(
                     fontSize = 14.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
                     fontWeight = FontWeight(400),
                     color = Color(0xFF111111),
                 )
@@ -122,7 +105,7 @@ fun SignUp5(
             modifier = Modifier
                 .border(
                     width = 1.dp,
-                    color = Color(0xFFA6A6A6),
+                    color = Color(0xFF902BE9),
                     shape = RoundedCornerShape(size = 8.dp)
                 )
                 .width(345.dp)
@@ -130,31 +113,32 @@ fun SignUp5(
                 .padding(start = 20.dp, top = 16.dp, end = 20.dp, bottom = 16.dp)
         ){
             Text(
-                text = "비밀번호를 재입력해주세요",
+                text = "●●●●●●●",
                 style = TextStyle(
                     fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
+                    lineHeight = 22.sp,
+                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
                     fontWeight = FontWeight(400),
-                    color = Color(0xFF7D7D7D),
+                    color = Color(0xFF111111),
                 )
             )
         }
-        Spacer(modifier = Modifier.height(67.dp))
+        Spacer(modifier = Modifier.height(70.dp))
         Button(
             onClick = { /*확인 클릭 이벤트*/ },
             modifier = Modifier
                 .width(345.dp)
                 .height(54.dp),
             shape = RoundedCornerShape(size = 8.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF690ED4))
+            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFF902BE9))
         ) {
             Text(
-                text = "확인",
+                text = "로그인",
                 style = TextStyle(
                     fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
-                    fontWeight = FontWeight(500),
-                    color = Color.White
+                    fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                    fontWeight = FontWeight(600),
+                    color = Color(0xFFC5C5C5),
                 )
             )
         }
@@ -163,6 +147,6 @@ fun SignUp5(
 
 @Preview
 @Composable
-fun PreviewSignUp5() {
-    SignUp5()
+fun PreviewLogin2() {
+    Login2()
 }
