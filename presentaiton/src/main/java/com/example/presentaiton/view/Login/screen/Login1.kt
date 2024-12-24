@@ -25,6 +25,18 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
+import com.example.presentation.view.Login.screen.Login
+
+@Composable
+internal fun LoginRoute(
+    onSignUpClick: () -> Unit,
+    onInputLoginClick: () -> Unit
+) {
+    Login1(
+        onSignUpClick = onSignUpClick,
+        onInputLoginClick = onInputLoginClick
+    )
+}
 
 @Composable
 fun Login1(
