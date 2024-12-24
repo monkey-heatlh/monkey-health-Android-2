@@ -2,13 +2,7 @@ package com.example.presentaiton.view.Login.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
@@ -25,22 +19,16 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
-import com.example.presentation.view.Login.screen.Login
 
 @Composable
-internal fun LoginRoute(
-    onSignUpClick: () -> Unit,
-    onInputLoginClick: () -> Unit
-) {
-    Login1(
-        onSignUpClick = onSignUpClick,
-        onInputLoginClick = onInputLoginClick
-    )
+internal fun LoginAoute(onInputLoginClick: () -> Unit) {
+    Login1(onInputLoginClick = onInputLoginClick)
 }
 
 @Composable
 fun Login1(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onInputLoginClick: () -> Unit
 ) {
     Column(
         modifier = modifier
@@ -49,7 +37,7 @@ fun Login1(
             .padding(horizontal = 24.dp, vertical = 82.dp),
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.Top
-    ){
+    ) {
         Text(
             text = "로그인",
             style = TextStyle(
@@ -61,6 +49,7 @@ fun Login1(
         )
         Spacer(modifier = Modifier.height(51.dp))
 
+        // 이메일 라벨 및 입력란
         Column(
             modifier = Modifier
                 .width(345.dp)
@@ -97,7 +86,10 @@ fun Login1(
                 )
             )
         }
+
         Spacer(modifier = Modifier.height(28.dp))
+
+        // 비밀번호 라벨 및 입력란
         Column(
             modifier = Modifier
                 .width(345.dp)
@@ -134,9 +126,12 @@ fun Login1(
                 )
             )
         }
+
         Spacer(modifier = Modifier.height(70.dp))
+
+        // 로그인 버튼
         Button(
-            onClick = { /*확인 클릭 이벤트*/ },
+            onClick = onInputLoginClick,
             modifier = Modifier
                 .width(345.dp)
                 .height(54.dp),
@@ -159,5 +154,5 @@ fun Login1(
 @Preview
 @Composable
 fun PreviewLogin1() {
-    Login1()
+    Login1(onInputLoginClick = {})
 }
