@@ -1,13 +1,12 @@
-package com.example.presentaiton.view.Login.screen
+package com.example.presentation.view.Login.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
@@ -27,8 +26,21 @@ import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
 
 @Composable
+internal fun LoginRoute(
+    onSignUpClick: () -> Unit,
+    onInputLoginClick: () -> Unit
+) {
+    Login(
+        onSignUpClick = onSignUpClick,
+        onInputLoginClick = onInputLoginClick
+    )
+}
+
+@Composable
 fun Login(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onSignUpClick: () -> Unit,
+    onInputLoginClick: () -> Unit
 ) {
     Column(
         modifier = modifier
@@ -43,7 +55,7 @@ fun Login(
             text = "MONKEY HEALTH",
             style = TextStyle(
                 fontSize = 32.sp,
-                fontFamily = FontFamily(Font(R.font.pretendard_semibold)),
+                fontFamily = FontFamily(Font(R.font.pretendard_semibold)), // 수정: 불필요한 "-" 제거
                 fontWeight = FontWeight.Bold,
                 color = Color(0xFF902BE9),
             ),
@@ -59,7 +71,7 @@ fun Login(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Button(
-                onClick = { /* TODO: 회원가입 기능 추가 */ },
+                onClick = onSignUpClick,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color.White
                 ),
@@ -77,9 +89,9 @@ fun Login(
                     )
                 )
             }
-            Spacer(modifier = Modifier.height(12.dp))
+
             Button(
-                onClick = { /* TODO: 로그인 기능 추가 */ },
+                onClick = onInputLoginClick,
                 colors = ButtonDefaults.buttonColors(
                     containerColor = Color(0xFF902BE9)
                 ),
@@ -103,5 +115,8 @@ fun Login(
 @Preview
 @Composable
 fun PreviewLogin() {
-    Login()
+    Login(
+        onSignUpClick = { println("회원가입 클릭") },
+        onInputLoginClick = { println("로그인 클릭") }
+    )
 }
