@@ -1,13 +1,13 @@
 package com.example.presentaiton.view.Login.screen
 
+import android.os.Bundle
+import androidx.activity.ComponentActivity
+import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
-import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,17 +19,40 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.presentaiton.R
-
-@Composable
-internal fun LoginAoute(onInputLoginClick: () -> Unit) {
-    Login1(onInputLoginClick = onInputLoginClick)
-}
+import com.example.presentaiton.component.GomsTextField
 
 @Composable
 fun Login1(
     modifier: Modifier = Modifier,
     onInputLoginClick: () -> Unit
 ) {
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+    var isEmailError by remember { mutableStateOf(false) }
+    var isPasswordError by remember { mutableStateOf(false) }
+
+    // 이메일 검증 로직
+    fun validateEmail(): Boolean {
+        isEmailError = email.isBlank() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        return !isEmailError
+    }
+
+    // 비밀번호 검증 로직
+    fun validatePassword(): Boolean {
+        isPasswordError = password.isBlank() || password.length < 6
+        return !isPasswordError
+    }
+
+    // 로그인 버튼 클릭 시 검증 후 이동
+    fun onLoginClick() {
+        val isEmailValid = validateEmail()
+        val isPasswordValid = validatePassword()
+
+        if (isEmailValid && isPasswordValid) {
+            onInputLoginClick()
+        }
+    }
+
     Column(
         modifier = modifier
             .fillMaxSize()
@@ -50,11 +73,7 @@ fun Login1(
         Spacer(modifier = Modifier.height(51.dp))
 
         // 이메일 라벨 및 입력란
-        Column(
-            modifier = Modifier
-                .width(345.dp)
-                .height(17.dp)
-        ) {
+        Column(modifier = Modifier.width(345.dp)) {
             Text(
                 text = "이메일",
                 style = TextStyle(
@@ -65,36 +84,17 @@ fun Login1(
                 )
             )
         }
-        Column (
-            modifier = Modifier
-                .border(
-                    width = 1.dp,
-                    color = Color(0xFFA6A6A6),
-                    shape = RoundedCornerShape(size = 8.dp)
-                )
-                .width(345.dp)
-                .height(51.dp)
-                .padding(start = 20.dp, top = 16.dp, end = 20.dp, bottom = 16.dp)
-        ) {
-            Text(
-                text = "이메일을 입력해주세요",
-                style = TextStyle(
-                    fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
-                    fontWeight = FontWeight(400),
-                    color = Color(0xFF7D7D7D),
-                )
-            )
-        }
+        GomsTextField(
+            textState = email,
+            isError = isEmailError,
+            placeHolder = "이메일을 입력해주세요",
+            onValueChange = { email = it }
+        )
 
         Spacer(modifier = Modifier.height(28.dp))
 
         // 비밀번호 라벨 및 입력란
-        Column(
-            modifier = Modifier
-                .width(345.dp)
-                .height(17.dp)
-        ){
+        Column(modifier = Modifier.width(345.dp)) {
             Text(
                 text = "비밀번호",
                 style = TextStyle(
@@ -105,33 +105,18 @@ fun Login1(
                 )
             )
         }
-        Column(
-            modifier = Modifier
-                .border(
-                    width = 1.dp,
-                    color = Color(0xFFA6A6A6),
-                    shape = RoundedCornerShape(size = 8.dp)
-                )
-                .width(345.dp)
-                .height(51.dp)
-                .padding(start = 20.dp, top = 16.dp, end = 20.dp, bottom = 16.dp)
-        ){
-            Text(
-                text = "비밀번호를 입력해주세요",
-                style = TextStyle(
-                    fontSize = 16.sp,
-                    fontFamily = FontFamily(Font(R.font.pretendard_regular)),
-                    fontWeight = FontWeight(400),
-                    color = Color(0xFF7D7D7D),
-                )
-            )
-        }
+        GomsTextField(
+            textState = password,
+            isError = isPasswordError,
+            placeHolder = "비밀번호를 입력해주세요",
+            onValueChange = { password = it }
+        )
 
         Spacer(modifier = Modifier.height(70.dp))
 
         // 로그인 버튼
         Button(
-            onClick = onInputLoginClick,
+            onClick = { onLoginClick() },
             modifier = Modifier
                 .width(345.dp)
                 .height(54.dp),
