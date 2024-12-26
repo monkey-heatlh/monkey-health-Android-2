@@ -1,46 +1,49 @@
 plugins {
-    alias(libs.plugins.android.application)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    id(Dependency.Gradle.KOTLIN)
+    id(Dependency.Gradle.LIBRARY)
+    id(Dependency.Hilt.HILT_PLUGIN)
+    id(Dependency.Gradle.KSP)
 }
 
 android {
-    namespace = "com.example.presentaiton"
-    compileSdk = 34
+    namespace = ProjectProperties.NameSpace.PRESENTATION
+    compileSdk = ProjectProperties.Versions.COMPILE_SDK
 
     defaultConfig {
-        applicationId = "com.example.presentaiton"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        minSdk = ProjectProperties.Versions.MIN_SDK
+        targetSdk = ProjectProperties.Versions.TARGET_SDK
+
+
+        testInstrumentationRunner = ProjectProperties.Test.TEST_RUNNER
         vectorDrawables {
             useSupportLibrary = true
         }
+
     }
 
     buildTypes {
         release {
             isMinifyEnabled = false
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile(ProjectProperties.Files.DEFAULT_PROGUARD_FILES),
+                ProjectProperties.Files.PROGUARD_FILES
             )
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility =  ProjectProperties.Versions.JAVA_VERSION
+        targetCompatibility = ProjectProperties.Versions.JAVA_VERSION
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = ProjectProperties.Versions.JVM_TARGET
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = Versions.COMPOSE
     }
     packaging {
         resources {
@@ -50,20 +53,41 @@ android {
 }
 
 dependencies {
-    implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.lifecycle.runtime.ktx)
-    implementation(libs.androidx.activity.compose)
-    implementation(platform(libs.androidx.compose.bom))
-    implementation(libs.androidx.ui)
-    implementation(libs.androidx.ui.graphics)
-    implementation(libs.androidx.ui.tooling.preview)
-    implementation(libs.androidx.material3)
-    implementation("androidx.navigation:navigation-compose:2.8.5")
-    testImplementation(libs.junit)
-    androidTestImplementation(libs.androidx.junit)
-    androidTestImplementation(libs.androidx.espresso.core)
-    androidTestImplementation(platform(libs.androidx.compose.bom))
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.tooling)
-    debugImplementation(libs.androidx.ui.test.manifest)
+    implementation(project(":domain"))
+    implementation(Dependency.AndroidX.CORE_KTX)
+    implementation(Dependency.AndroidX.LIFECYCLE)
+    implementation(Dependency.AndroidX.SPLASH)
+
+
+    implementation(Dependency.Compose.ACTIVITY_COMPOSE)
+    implementation(platform(Dependency.Compose.COMPOSE_BOM))
+    implementation(Dependency.AndroidX.COMPOSE_LIFECYCLE)
+    implementation(Dependency.Compose.COMPOSE)
+    implementation(Dependency.Compose.COMPOSE_GRAPHICS)
+    implementation(Dependency.Compose.COMPOSE_PREVIEW)
+    implementation(Dependency.Compose.COMPOSE_MATERIAL3)
+    implementation(Dependency.Compose.COMPOSE_MATERIAL)
+    implementation(Dependency.Compose.COMPOSE_NAVIGATION)
+    debugImplementation(Dependency.Compose.COMPOSE_TOOLING)
+
+    implementation(Dependency.Hilt.HILT)
+    ksp(Dependency.Hilt.HILT_COMPILER)
+    implementation (Dependency.Hilt.HILT_NAVIGATION_FRAGMENT)
+    implementation (Dependency.Hilt.HILT_NAVIGATION_COMPOSE)
+
+    testImplementation(Dependency.Test.JUNIT)
+    androidTestImplementation(Dependency.Test.ANDROID_JUNIT)
+    androidTestImplementation(Dependency.Test.ESPRESSO)
+    androidTestImplementation(platform(Dependency.Compose.COMPOSE_BOM))
+    androidTestImplementation(Dependency.Test.COMPOSE_JUNIT)
+    debugImplementation(Dependency.Test.COMPOSE_MANIFEST)
+
+    implementation(Dependency.Coil.COIL)
+
+    implementation(Dependency.Gauth.GAUTH)
+
+    implementation(Dependency.Google.SWIPE_REFRESH)
+
+    implementation(Dependency.Compose.COMPOSE_IMMUTABLELIST)
+
 }
