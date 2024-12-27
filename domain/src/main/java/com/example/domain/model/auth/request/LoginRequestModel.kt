@@ -1,4 +1,6 @@
 package com.example.domain.model.auth.request
 
-class LoginRequestModel {
-}
+data class LoginRequestModel (
+    val email : String,
+    val password : String,
+)
