@@ -24,4 +24,7 @@ interface AuthAPI {
     ): LoginResponse
 
     @POST(RequestUrls.AUTH.send)
+    suspend fun sendNumber(
+        @Body body: SendNumberRequest
+    )
 }
