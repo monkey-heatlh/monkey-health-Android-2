@@ -4,6 +4,7 @@ import android.view.PixelCopy.Request
 import com.example.data.di.RequestUrls
 import com.example.domain.model.auth.response.LoginResponseModel
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.Header
 import retrofit2.http.POST
 import retrofit2.http.GET
@@ -34,4 +35,7 @@ interface AuthAPI {
         @Query("email") email: String,
         @Query("code") code: String
     )
+
+    @DELETE(RequestUrls.AUTH.auth)
+    suspend fun logout()
 }
