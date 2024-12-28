@@ -12,4 +12,9 @@ interface AuthAPI {
     suspend fun signUp(
         @Body body: SignUpRequest
     )
+
+    @POST(RequestUrls.AUTH.signIn)
+    suspend fun login(
+        @Body body: LoginRequest
+    )
 }
