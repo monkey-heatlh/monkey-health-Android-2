@@ -2,7 +2,6 @@ package com.example.data.api
 
 import android.view.PixelCopy.Request
 import com.example.data.di.RequestUrls
-import com.example.domain.model.auth.response.LoginResponseModel
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Header
