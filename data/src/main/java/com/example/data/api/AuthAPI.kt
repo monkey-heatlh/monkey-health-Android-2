@@ -1,6 +1,5 @@
 package com.example.data.api
 
-import android.view.PixelCopy.Request
 import com.example.data.di.RequestUrls
 import retrofit2.http.Body
 import retrofit2.http.DELETE
