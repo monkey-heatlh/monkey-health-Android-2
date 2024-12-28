@@ -2,6 +2,7 @@ package com.example.data.api
 
 import android.view.PixelCopy.Request
 import com.example.data.di.RequestUrls
+import com.example.domain.model.auth.response.LoginResponseModel
 import retrofit2.http.Body
 import retrofit2.http.Header
 import retrofit2.http.POST
@@ -19,6 +20,6 @@ interface AuthAPI {
     )
     @POST(RequestUrls.AUTH.auth)
     suspend fun tokenRefresh(
-        @Header("refresh")
-    )
+        @Header("refresh") refreshToken: String
+    ): LoginResponse
 }
