@@ -1,6 +1,6 @@
 package com.example.data.di
 
-object RequestUrls {
+internal object RequestUrls {
     object AUTH {
         private const val path = "api/auth"
 
@@ -9,5 +9,9 @@ object RequestUrls {
         const val signIn = "$path/signin"
         const val send = "$path/email/send"
         const val verify = "$path/email/verify"
+    }
+
+    object CALENDER {
+        private const val path = "api/calender"
     }
 }
