@@ -4,6 +4,7 @@ import com.example.data.di.RequestUrls
 import com.example.data.dto.request.auth.LoginRequest
 import com.example.data.dto.request.auth.SendCodeRequest
 import com.example.data.dto.request.auth.SignUpRequest
+import com.example.data.dto.response.auth.LoginResponse
 import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.Header
