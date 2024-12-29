@@ -16,15 +16,14 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
-        maven ( url = "https://jitpack.io" )
+        maven(url = "https://jitpack.io")
     }
 }
 
 rootProject.name = "Ideafestival_2"
 include(":app")
-include(":presentaiton")
+include(":presentation")
 include(":data")
 include(":domain")
 include(":mylibrary")
-include(":model")
-include(":model")
+include(":model")  // 중복된 ":model" 제거
