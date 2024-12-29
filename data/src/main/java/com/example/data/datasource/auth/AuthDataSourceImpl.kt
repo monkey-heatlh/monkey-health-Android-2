@@ -10,6 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
+import kotlinx.coroutines.flow.internal.NopCollector.emit
 import javax.inject.Inject
 
 class AuthDataSourceImpl @Inject constructor(
@@ -24,22 +25,42 @@ class AuthDataSourceImpl @Inject constructor(
     }.flowOn(Dispatchers.IO)
 
     override suspend fun login(body: LoginRequest): Flow<LoginResponse> {
-        TODO("Not yet implemented")
-    }
+        emit(
+            MonkeyHealthApiHandler<Unit>()
+                .httpRequest { authAPI.login(body = body) }
+                .sendRequest()
+        )
+    }.flowOn(Dispatchers.IO)
 
     override suspend fun tokenRefresh(refreshToken: String): Flow<LoginResponse> {
-        TODO("Not yet implemented")
-    }
+        emit(
+            MonkeyHealthApiHandler<Unit>()
+                .httpRequest { authAPI.tokenRefresh(refreshToken = refreshToken) }
+                .sendRequest()
+        )
+    }.flowOn(Dispatchers.IO)
 
     override suspend fun sendCode(body: SendCodeRequest): Flow<Unit> {
-        TODO("Not yet implemented")
-    }
+        emit(
+            MonkeyHealthApiHandler<Unit>()
+                .httpRequest { authAPI.sendCode(body = body) }
+                .sendRequest()
+        )
+    }.flowOn(Dispatchers.IO)
 
     override suspend fun verifyCode(email: String, code: String): Flow<Unit> {
-        TODO("Not yet implemented")
-    }
+        emit(
+            MonkeyHealthApiHandler<Unit>()
+                .httpRequest { authAPI.verifyCode(email = email, code = code) }
+                .sendRequest()
+        )
+    }.flowOn(Dispatchers.IO)
 
     override suspend fun logout(): Flow<Unit> {
-        TODO("Not yet implemented")
-    }
+        emit(
+            MonkeyHealthApiHandler<Unit>()
+                .httpRequest { authAPI.logout() }
+                .sendRequest()
+        )
+    }.flowOn(Dispatchers.IO)
 }
