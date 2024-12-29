@@ -27,12 +27,12 @@ interface AuthAPI {
     ): LoginResponse
 
     @POST(RequestUrls.AUTH.send)
-    suspend fun sendNumber(
+    suspend fun sendCode(
         @Body body: SendCodeRequest
     )
 
     @POST(RequestUrls.AUTH.verify)
-    suspend fun verifyNumber(
+    suspend fun verifyCode(
         @Query("email") email: String,
         @Query("code") code: String
     )
