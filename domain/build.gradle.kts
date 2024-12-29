@@ -39,6 +39,7 @@ dependencies {
     implementation(Dependency.AndroidX.APPCOMPAT)
     implementation(Dependency.Google.MATERIAL)
     implementation(Dependency.AndroidX.COMPOSE_LIFECYCLE)
+    implementation(libs.protolite.well.known.types)
     testImplementation(Dependency.Test.JUNIT)
     androidTestImplementation(Dependency.Test.ANDROID_JUNIT)
     androidTestImplementation(Dependency.Test.ESPRESSO)
