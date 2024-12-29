@@ -17,6 +17,7 @@ interface AuthAPI {
     suspend fun login(
         @Body body: LoginRequest
     )
+
     @POST(RequestUrls.AUTH.auth)
     suspend fun tokenRefresh(
         @Header("refresh") refreshToken: String
