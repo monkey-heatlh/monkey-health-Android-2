@@ -25,6 +25,7 @@ interface AuthAPI {
     @POST(RequestUrls.AUTH.send)
     suspend fun sendNumber(
         @Body body: SendNumberRequest
+        
     )
 
     @POST(RequestUrls.AUTH.verify)
