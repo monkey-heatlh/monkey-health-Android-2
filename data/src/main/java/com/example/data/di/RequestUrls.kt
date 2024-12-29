@@ -17,5 +17,11 @@ internal object RequestUrls {
 
     object ROUTINE {
         private const val path = "api/routine"
+
+    }
+
+    object AI {
+        private const val path = "api/ai"
+
     }
 }
