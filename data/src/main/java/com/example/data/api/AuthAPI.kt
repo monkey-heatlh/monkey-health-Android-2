@@ -2,6 +2,7 @@ package com.example.data.api
 
 import com.example.data.di.RequestUrls
 import com.example.data.dto.request.auth.LoginRequest
+import com.example.data.dto.request.auth.SendCodeRequest
 import com.example.data.dto.request.auth.SignUpRequest
 import retrofit2.http.Body
 import retrofit2.http.DELETE
@@ -27,8 +28,7 @@ interface AuthAPI {
 
     @POST(RequestUrls.AUTH.send)
     suspend fun sendNumber(
-        @Body body: SendNumberRequest
-        
+        @Body body: SendCodeRequest
     )
 
     @POST(RequestUrls.AUTH.verify)
