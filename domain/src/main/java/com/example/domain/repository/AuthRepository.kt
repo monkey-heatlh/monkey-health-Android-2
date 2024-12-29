@@ -7,4 +7,6 @@ interface AuthRepository {
     suspend fun signUp(body: signUpRequestModel): Flow <Unit>
 
     suspend fun login(body: LoginRequestModel): Flow<Unit>
+
+    suspend fun tokenRefresh(refreshToken: String): Flow<Unit>
 }
