@@ -7,6 +7,6 @@ class VerifyCodeUseCase @Inject constructor(
     private val authRepository: AuthRepository
 ) {
     suspend operator fun invoke(email: String, authCode: String) = kotlin.runCatching {
-        authRepository.verifyCode(email = email, Code = Code)
+        authRepository.verifyCode(email = email, code = code)
     }
 }
