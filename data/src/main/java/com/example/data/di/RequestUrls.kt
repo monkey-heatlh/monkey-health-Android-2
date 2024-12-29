@@ -13,15 +13,19 @@ internal object RequestUrls {
 
     object CALENDER {
         private const val path = "api/calender"
+
+        const val calender = path
     }
 
     object ROUTINE {
         private const val path = "api/routine"
 
+        const val routine = path
     }
 
     object AI {
         private const val path = "api/ai"
 
+        const val ai = path
     }
 }
