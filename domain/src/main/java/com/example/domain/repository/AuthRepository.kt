@@ -1,8 +1,8 @@
 package com.example.domain.repository
 
 import com.example.domain.model.auth.response.LoginResponseModel
-import okhttp3.internal.http2.ErrorCode
 import java.util.concurrent.Flow
+import kotlin.Unit as Unit
 
 interface AuthRepository {
     suspend fun signUp(body: signUpRequestModel): Flow <Unit>
@@ -17,9 +17,9 @@ interface AuthRepository {
 
     suspend fun deleteToken()
 
-    suspend fun sendNumber(body: sendNumberRequestModel): Flow<Unit>
+    suspend fun sendCode(body: sendCodeRequestModel): Flow<Unit>
 
-    suspend fun verifyNumber(email: String, code: String): Flow<Unit>
+    suspend fun verifyCode(email: String, code: String): Flow<Unit>
 
     suspend fun logout(): Flow<Unit>
 }
