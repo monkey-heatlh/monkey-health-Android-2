@@ -15,4 +15,6 @@ interface AuthRepository {
     fun getRefreshToken(): Flow<String>
 
     suspend fun deleteToken()
+
+    suspend fun sendNumber(body: sendNumberRequestModel): Flow<Unit>
 }
