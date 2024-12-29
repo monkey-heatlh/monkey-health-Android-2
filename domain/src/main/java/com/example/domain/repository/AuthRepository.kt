@@ -1,6 +1,5 @@
 package com.example.domain.repository
 
-import com.example.domain.model.auth.request.PostLoginRequestModel
 import com.example.domain.model.auth.response.LoginResponseModel
 import java.util.concurrent.Flow
 import kotlin.String as String1
