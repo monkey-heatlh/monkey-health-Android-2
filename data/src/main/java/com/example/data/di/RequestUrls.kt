@@ -15,7 +15,7 @@ internal object RequestUrls {
         private const val path = "api/calender"
     }
 
-    object ROUTINE{
+    object ROUTINE {
         private const val path = "api/routine"
     }
 }
