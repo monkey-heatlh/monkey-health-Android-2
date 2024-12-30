@@ -1,4 +1,6 @@
 package com.example.domain.emumtype
 
-class OrderRequestBookType {
+enum class OrderRequestBookType {
+    NOVEL,
+    ESSAY
 }
