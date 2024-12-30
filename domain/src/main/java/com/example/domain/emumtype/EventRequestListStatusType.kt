@@ -1,4 +1,6 @@
 package com.example.domain.emumtype
 
-class EventRequestListStatusType {
+enum class EventRequestListStatusType {
+    NOW,
+    PAST
 }
