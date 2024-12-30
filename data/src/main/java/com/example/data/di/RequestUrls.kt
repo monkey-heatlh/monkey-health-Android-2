@@ -32,5 +32,6 @@ internal object RequestUrls {
         private const val path = "api/ai"
 
         const val ai = path
+        const val analyzePushup = "$path/analyze-pushup"
     }
 }
