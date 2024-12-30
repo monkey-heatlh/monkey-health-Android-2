@@ -1,4 +1,5 @@
 package com.example.domain.model.calender.request
 
-class SaveCalenderRequestModel {
-}
+class SaveCalenderRequestModel (
+    val content: String
+)
