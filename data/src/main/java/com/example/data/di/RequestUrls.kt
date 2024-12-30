@@ -17,6 +17,7 @@ internal object RequestUrls {
         const val calender = path
         const val date = "$path/{date}"
         const val save = "$path/save/{date}"
+        const val delete = "$path/delete/{date}"
     }
 
     object ROUTINE {
