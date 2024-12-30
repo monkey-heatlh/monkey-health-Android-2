@@ -1,4 +1,6 @@
 package com.example.domain.model.calender.response
 
-class GetCalenderResponseModel {
-}
+class GetCalenderResponseModel (
+    val id: String,
+
+)
