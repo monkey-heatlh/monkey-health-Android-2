@@ -27,3 +27,4 @@ include(":data")
 include(":domain")
 include(":mylibrary")
 include(":model")  // 중복된 ":model" 제거
+include(":datastore")
