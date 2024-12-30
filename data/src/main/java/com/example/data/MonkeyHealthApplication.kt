@@ -1,4 +1,7 @@
 package com.example.data
 
-class MonkeyHealthApplication {
-}
+import android.app.Application
+import dagger.hilt.android.HiltAndroidApp
+
+@HiltAndroidApp
+class MonkeyHealthApplication: Application()
