@@ -1,4 +1,8 @@
 package com.example.data.util
 
-class TokenAuthenticator {
+import javax.inject.Inject
+
+class TokenAuthenticator @Inject constructor(
+    private val dataSource: AuthTokenDataSource
+) {
 }
