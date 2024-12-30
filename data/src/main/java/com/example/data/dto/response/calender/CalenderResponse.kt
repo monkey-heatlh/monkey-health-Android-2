@@ -4,7 +4,7 @@ import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
-data class GetCalenderResponse (
+data class CalenderResponse (
     @Json(name = "id") val id: String,
     @Json(name = "email") val email: String,
     @Json(name = "content") val content: String,
