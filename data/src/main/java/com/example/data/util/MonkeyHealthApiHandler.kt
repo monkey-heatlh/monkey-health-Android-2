@@ -2,6 +2,7 @@ package com.example.data.util
 
 import android.util.Log
 import com.example.domain.exception.NoInternetException
+import com.example.domain.exception.UnauthorizedException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import retrofit2.HttpException
