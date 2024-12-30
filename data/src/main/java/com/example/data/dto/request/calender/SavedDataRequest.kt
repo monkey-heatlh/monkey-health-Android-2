@@ -5,8 +5,5 @@ import com.squareup.moshi.JsonClass
 
 @JsonClass(generateAdapter = true)
 data class SavedDataRequest (
-    @Json(name = "id") val id: String,
-    @Json(name = "email") val email: String,
-    @Json(name = "content") val content: String,
-    @Json(name = "data") val data: String
+    @Json(name = "content") val content: String
 )
