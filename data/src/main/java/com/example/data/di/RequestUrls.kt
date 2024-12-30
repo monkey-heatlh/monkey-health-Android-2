@@ -22,6 +22,7 @@ internal object RequestUrls {
 
         const val routine = path
         const val send = "$path/send"
+        const val save = "$path/save"
     }
 
     object AI {
