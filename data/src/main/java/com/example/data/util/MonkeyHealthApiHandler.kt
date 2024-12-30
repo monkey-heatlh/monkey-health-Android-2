@@ -1,7 +1,15 @@
 package com.example.data.util
 
 import android.util.Log
+import com.chobo.domain.exception.NoInternetException
+import com.example.domain.exception.ConflictException
+import com.example.domain.exception.ForBiddenException
 import com.example.domain.exception.NoInternetException
+import com.example.domain.exception.NotFoundException
+import com.example.domain.exception.OtherHttpException
+import com.example.domain.exception.ServerException
+import com.example.domain.exception.TimeOutException
+import com.example.domain.exception.UnKnownException
 import com.example.domain.exception.UnauthorizedException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
