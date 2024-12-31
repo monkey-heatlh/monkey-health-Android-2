@@ -1,8 +1,6 @@
 package com.example.domain.usecase.routine
 
-import com.example.domain.model.auth.request.LoginRequestModel
 import com.example.domain.model.routine.request.PostRoutineModel
-import com.example.domain.repository.AuthRepository
 import com.example.domain.repository.RoutineRepository
 import javax.inject.Inject
 
