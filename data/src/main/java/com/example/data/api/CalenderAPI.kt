@@ -15,4 +15,8 @@ interface CalenderAPI {
     suspend fun save(
 
     )
+    @DELETE(RequestUrls.CALENDER.delete)
+    suspend fun dele(
+
+    )
 }
