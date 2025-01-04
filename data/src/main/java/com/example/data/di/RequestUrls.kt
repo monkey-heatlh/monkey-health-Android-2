@@ -24,7 +24,7 @@ internal object RequestUrls {
         private const val path = "api/routine"
 
         const val routine = path
-        const val send = "$path/send"
+        const val read = "$path/read"
         const val save = "$path/save"
     }
 
